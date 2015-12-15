@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.minesweeperController">
+   <children>
+      <Label fx:id="board" layoutX="38.0" layoutY="80.0" onInputMethodTextChanged="#drawboard" prefHeight="201.0" prefWidth="301.0" text="Play Area" />
+      <TextField fx:id="rowEntryTF" layoutX="95.0" layoutY="288.0" onAction="tileChecker" prefHeight="25.0" prefWidth="69.0" promptText="Row" />
+      <TextField fx:id="ColEntryTF" layoutX="283.0" layoutY="288.0" onAction="#tileChecker" prefHeight="25.0" prefWidth="69.0" promptText="Column" />
+      <Button fx:id="tileChecker" layoutX="201.0" layoutY="288.0" mnemonicParsing="false" onAction="#tileChecker" onMouseClicked="#tileChecker" text="Fire!!" />
+      <TextArea editable="false" layoutX="4.0" layoutY="325.0" prefHeight="43.0" prefWidth="419.0">
+         <padding>
+            <Insets bottom="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TextArea>
+      <Text fx:id="score" layoutX="36.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score :" wrappingWidth="43.0" />
+      <TextArea fx:id="scoreboxTF" editable="false" layoutX="85.0" layoutY="331.0" onKeyReleased="#score" onMouseClicked="#score" prefHeight="25.0" prefWidth="116.0" promptText="0" />
+      <TextArea layoutX="118.0" layoutY="4.0" prefHeight="55.0" prefWidth="203.0" />
+      <Text fx:id="HeaderText" fill="#d72109" layoutX="134.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mine Sweeper" wrappingWidth="173.13671875">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="name" fill="#2e33c7" layoutX="133.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By: Ben Sterzinger " textAlignment="CENTER" wrappingWidth="173.13671875" />
+      <MenuButton fx:id="mainMenu" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#startBoard" text="New Game" />
+          <MenuItem fx:id="players" mnemonicParsing="false" onAction="#Players" text="View Players" />
+        </items>
+      </MenuButton>
+   </children>
+</fx:root>
